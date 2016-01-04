@@ -1179,6 +1179,7 @@ module Batteries
   , module Data.Int
   , module Data.Int.Bits
   , module Data.Lazy
+  , module Data.Lens
   , module Data.List
   , module Data.List.Lazy
   , module Data.List.Unsafe
@@ -1228,13 +1229,6 @@ module Batteries
   , module Global
   , module Global.Unsafe
   , module Math
-  , module Optic.Core
-  , module Optic.Getter
-  , module Optic.Laws.Lens
-  , module Optic.Lens
-  , module Optic.Prism
-  , module Optic.Setter
-  , module Optic.Types
   , module Prelude
   , module Test.Assert
   , module Type.Proxy
@@ -2259,6 +2253,12 @@ import Data.Lazy
   -- , defer -- NOTE: Control.Lazy
     force
   )
+import Data.Lens
+  -- TODO: explicit import list
+  hiding
+  ( right
+  , left
+  )
 import Data.List
   ( List(Cons, Nil)
   -- , alterAt -- TODO
@@ -2856,74 +2856,6 @@ import Math
   , sqrt2
   , tan
   , (%)
-  )
-import Optic.Core
-  ( (..)
-  )
-import Optic.Getter
-  ( to
-  , view
-  , (^.)
-  )
-import Optic.Laws.Lens
-  ( getSet
-  , setGet
-  , setSet
-  , validLens
-  )
-import Optic.Lens
-  ( lens
-  , (??)
-  )
-import Optic.Prism
-  ( clonePrism
-  , is
-  , isn't
-  , matching
-  , nearly
-  , only
-  , prism
-  , prism'
-  , withPrism
-  )
-import Optic.Setter
-  ( argument
-  , contramapped
-  , mapped
-  , over
-  , set
-  , set'
-  , sets
-  , (-~)
-  , (?~)
-  , (.~)
-  , (*~)
-  , (//~)
-  , (&&~)
-  , (%~)
-  , (++~)
-  , (+~)
-  , (<>~)
-  , (||~)
-  )
-import Optic.Types
-  ( Accessing()
-  , APrism()
-  , APrismP()
-  , ASetter()
-  , ASetterP()
-  , Getter()
-  , Getting()
-  , Lens()
-  , LensP()
-  , Optical()
-  , OpticalP()
-  , Prism()
-  , PrismP()
-  , Setter()
-  , SetterP()
-  , Setting()
-  , SettingP()
   )
 import Prelude
   ( Applicative
